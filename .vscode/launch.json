@@ -12,7 +12,7 @@
             // "program": "search_param.py",
             "console": "integratedTerminal",
             "justMyCode": true,
-            "args": ["--config","options/cur_exp/multi_steps/incremental_adapters_cil_v2_1_ab1/skin8_w_adapter.yaml", "--device", "3"]
+            "args": ["--config","options/multi_steps/dynamic_er/cifar10_pretrained.yaml", "--device", "5","--memory_size","200"]
             // "args": ["--config","options/multi_steps/finetune/cifar100_replay.yaml"]
             // "args": ["--config","options/cur_exp/multi_steps/incremental_adapters_cil_v2_1/skin40_auxOthersFC_minTest_seperateFC.yaml", 
             //     "--device", "1"]
