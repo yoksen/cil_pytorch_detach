@@ -1,7 +1,7 @@
 ######### Basic Settings #########
 basic:
     device: '2'
-    seed: [42, 100, 1993] # 42, 100, 1993
+    seed: [32] # 42, 100, 1993
 
     # Dataset Choises: cifar100, cifar100, imagenet100, imagenet1000, tinyimagenet,
     # skin7, sd198(also known as skin40), mymedmnist
@@ -16,13 +16,13 @@ basic:
 
     # Backbone Choises: resnet18, resnet18_cbam, cosine_resnet18, 
     # resnet32, cosine_resnet32, resnet34, cosine_resnet34, resnet50
-    backbone: efficientnet_b0
+    backbone: resnet18
     pretrained: true
     save_models: true # if true, programm will save model's weights during incremental train
 
     ######### Exampler Hyperparameters #########
     memory_size: 2000
-    fixed_memory: false
+    fixed_memory: true
     sampling_method: herding # herding, random, closest_to_mean 
 
     apply_nme: true
@@ -30,8 +30,8 @@ basic:
     ######### Task Settings, unimportant in Joint #########
     # for some datasets(e.g. MedMNist), this will be ignored
     split_dataset: true
-    init_cls: 10
-    increment: 10
+    init_cls: 20
+    increment: 20
     
     # test_epoch: 10
 

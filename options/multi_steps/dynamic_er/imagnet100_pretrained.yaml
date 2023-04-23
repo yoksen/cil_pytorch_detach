@@ -1,7 +1,7 @@
 ######### Basic Settings #########
 basic:
     device: '0'
-    seed: [1993] # icarl 官方代码给的种子是 1993
+    seed: [32] # icarl 官方代码给的种子是 1993
 
     dataset: imagenet100
     shuffle: true
@@ -15,7 +15,7 @@ basic:
     # Backbone Choises: resnet18, resnet18_cbam, cosine_resnet18, 
     # resnet32, cosine_resnet32, resnet34, cosine_resnet34, resnet50
     backbone: resnet18
-    pretrained: false
+    pretrained: true
     save_models: true # if true, programm will save model's weights during incremental train
 
     ######### Exampler Hyperparameters #########
