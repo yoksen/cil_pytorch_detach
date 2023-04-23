@@ -104,6 +104,7 @@ class IncrementalNet(nn.Module):
         self.set_hooks()
         
     def set_hooks(self):
+        
         if len(self._layer_names)>0:
             model_dict = dict([*self.feature_extractor.named_modules()]) 
             for layer_id in self._layer_names:

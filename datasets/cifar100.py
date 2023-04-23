@@ -35,8 +35,8 @@ class CIFAR100(iData):
         self.class_order = np.arange(100).tolist()
 
     def download_data(self):
-        train_dataset = datasets.cifar.CIFAR100(os.environ['DATA'], train=True, download=True)
-        test_dataset = datasets.cifar.CIFAR100(os.environ['DATA'], train=False, download=True)
+        train_dataset = datasets.cifar.CIFAR100(os.environ['CIFARDATASET'], train=True, download=True)
+        test_dataset = datasets.cifar.CIFAR100(os.environ['CIFARDATASET'], train=False, download=True)
         
         self.class_to_idx = train_dataset.class_to_idx
 

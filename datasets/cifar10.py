@@ -36,8 +36,8 @@ class CIFAR10(iData):
 
     def download_data(self):
         # or replay os.environ['xxx'] with './data/'
-        train_dataset = datasets.cifar.CIFAR10(os.environ['DATA'], train=True, download=True)
-        test_dataset = datasets.cifar.CIFAR10(os.environ['DATA'], train=False, download=True)
+        train_dataset = datasets.cifar.CIFAR10(os.environ['CIFAR10'], train=True, download=True)
+        test_dataset = datasets.cifar.CIFAR10(os.environ['CIFAR10'], train=False, download=True)
         
         self.class_to_idx = train_dataset.class_to_idx
         
