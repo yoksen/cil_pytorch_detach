@@ -1,6 +1,10 @@
 ######### Basic Settings #########
 basic:
+<<<<<<< HEAD
     device: '5'
+=======
+    device: '6'
+>>>>>>> fae6483a9087954991587412075d539425b00838
     seed: [32] # icarl 官方代码给的种子是 1993
 
     # Dataset Choises: cifar100, cifar100, imagenet100, imagenet1000, tinyimagenet,
@@ -30,8 +34,13 @@ basic:
     ######### Task Settings, unimportant in Joint #########
     # for some datasets(e.g. MedMNist), this will be ignored
     split_dataset: true
+<<<<<<< HEAD
     init_cls: 20
     increment: 20
+=======
+    init_cls: 5
+    increment: 5
+>>>>>>> fae6483a9087954991587412075d539425b00838
 
 
 ######### Method's Hyperparameters #########
@@ -47,9 +56,25 @@ special:
 options:
     # experiment settings for cifar100
     cifar100: 
+<<<<<<< HEAD
         cosine_resnet18:
         
             opt_type: sgd
+=======
+        cosine_resnet32:
+        
+            opt_type: sgd
+            epochs: 1 #160 #170
+            lrate: 0.1
+            scheduler: multi_step
+            milestones: [80, 120]
+            lrate_decay: 0.1
+            batch_size: 128
+            weight_decay: 0.0005
+            num_workers: 4
+        cosine_resnet18:
+            opt_type: sgd
+>>>>>>> fae6483a9087954991587412075d539425b00838
             epochs: 160 #160 #170
             lrate: 0.001
             scheduler: multi_step
@@ -57,4 +82,8 @@ options:
             lrate_decay: 0.1
             batch_size: 128
             weight_decay: 0.0005
+<<<<<<< HEAD
             num_workers: 8
+=======
+            num_workers: 4
+>>>>>>> fae6483a9087954991587412075d539425b00838
