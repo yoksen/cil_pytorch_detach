@@ -26,7 +26,7 @@ class CIFAR100_Cutout(iData):
         mean = np.array([0.4914, 0.4822, 0.4465])
         std = np.array([0.2470, 0.2435, 0.2616])
 
-        self.train_trsf = transforms.Compose([
+        self.train_trsf = [
             transforms.RandomCrop(img_size, padding=4),
             transforms.RandomHorizontalFlip(),
             normalize(mean, std),
@@ -34,11 +34,11 @@ class CIFAR100_Cutout(iData):
                    p=1,
                    cutout_inside=False),
             to_tensor(),
-        ])
-        self.test_trsf = transforms.Compose([
+        ]
+        self.test_trsf = [
             transforms.ToTensor(),
             transforms.Normalize(mean, std),
-        ])
+        ]
         self.common_trsf = []
         self.class_order = np.arange(100).tolist()
 

@@ -78,10 +78,10 @@ options:
         resnet18_cbam:
             img_size: 32
             opt_type: sgd
-            epochs: 170 # 170
-            lrate: 0.01
+            epochs: 200 # 170
+            lrate: 0.1
             scheduler: multi_step
-            milestones: [100,120]
+            milestones: [100,150] #100,120
             lrate_decay: 0.1
             weight_decay: 0.0005
             batch_size: 128

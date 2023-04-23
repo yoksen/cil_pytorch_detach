@@ -409,6 +409,11 @@ class Finetune_IL(BaseLearner):
             elif config.scheduler == 'cos':
                 scheduler = optim.lr_scheduler.CosineAnnealingLR(optimizer=optimizer, T_max=self._init_epochs)
                 self._logger.info('Applying coss scheduler')
+            elif config.scheduler == 'cos_warm_restart':
+                num_restarts = 2
+                scheduler = torch.optim.lr_scheduler.CosineAnnealingWarmRestarts(optimizer,
+                                                                            T_0=int(self._init_epochs / (num_restarts + 1)),
+                                                                            eta_min=self._init_lrate * 1e-3)
             elif config.scheduler == None:
                 scheduler = None
             else: 
@@ -420,6 +425,11 @@ class Finetune_IL(BaseLearner):
             elif config.scheduler == 'cos':
                 scheduler = optim.lr_scheduler.CosineAnnealingLR(optimizer=optimizer, T_max=config.epochs)
                 self._logger.info('Applying cos scheduler')
+            elif config.scheduler == 'cos_warm_restart':
+                num_restarts = 2
+                scheduler = torch.optim.lr_scheduler.CosineAnnealingWarmRestarts(optimizer,
+                                                                            T_0=int(config.epochs / (num_restarts + 1)),
+                                                                            eta_min=config.lrate * 1e-3)
             # elif config.scheduler == 'coslrs':
             #     scheduler = optim.CosineLRScheduler(optimizer, t_initial=self._init_epochs, decay_rate=0.1, lr_min=1e-5, warmup_t=5, warmup_lr_init=1e-6)
             elif config.scheduler == None:
